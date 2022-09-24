@@ -9,7 +9,57 @@
 </head>
 
 <body>
+    <div class="calculatorBody">
+        <table>
+            <tr>
+                <td> <input type="text" name="" id="myResult"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="C" onclick="DeleteMe('c')"></td>
+                <td><input type="text" value="(" onclick="calculator('(')"></td>
+                <td><input type="text" value=")" onclick="calculator(')')"></td>
+            </tr>
+            <tr>
+                <td><input type="text" value="7" onclick="calculator('7')"></td>
+                <td><input type="text" value="8" onclick="calculator('8')"></td>
+                <td><input type="text" value="9" onclick="calculator('9')"></td>
+                <td><input type="text" value="+" onclick="calculator('+')"></td>
+            </tr>
+            <tr>
+                <td><input type="text" value="4" onclick="calculator('4')"></td>
+                <td><input type="text" value="5" onclick="calculator('5')"></td>
+                <td><input type="text" value="6" onclick="calculator('6')"></td>
+                <td><input type="text" value="-" onclick="calculator('-')"></td>
+            </tr>
+            <tr>
+                <td><input type="text" value="1" onclick="calculator('1')"></td>
+                <td><input type="text" value="2" onclick="calculator('2')"></td>
+                <td><input type="text" value="3" onclick="calculator('3')"></td>
+                <td><input type="text" value="*" onclick="calculator('4')"></td>
+            </tr>
+            <tr>
+                <td><input type="text" value="0" onclick="calculator('0')"></td>
+                <td><input type="text" value="." onclick="calculator('.')"></td>
+                <td><input type="text" value="/" onclick="calculator('/')"></td>
+                <td><input type="text" value="=" onclick="answer()"></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        function DeleteMe() {
+            document.getElementById('myResult').value = '';
+        }
 
+        function calculator(newValue) {
+            document.getElementById('myResult').value += newValue;
+        }
+
+        function answer() {
+            let a = document.getElementById('myResult').value;
+            let b = eval(a);
+            document.getElementById('myResult').value = b.toFixed(2);
+        }
+    </script>
 </body>
 
 </html>
