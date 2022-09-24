@@ -6,42 +6,104 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS CALCULATOR</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: beige;
+        }
+
+        .calculatorBody {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 500px;
+        }
+
+        table {
+            border-collapse: collapse;
+            background-color: darkkhaki;
+            box-shadow: grey 0px 10px 50px;
+            border: 2px solid grey;
+
+        }
+
+
+        input[type='button'] {
+            width: 90px;
+            height: 80px;
+            color: wheat;
+            background-color: black;
+            font-size: 2rem;
+            border: none;
+            cursor: pointer;
+            transition: .2s ease-in-out;
+            outline: none !important;
+            border: none !important;
+        }
+
+        input[type='button']:hover {
+            background-color: darkkhaki;
+            color: black;
+            outline: none;
+            border-radius: 12px;
+        }
+
+        input[type='text'] {
+            width: 340px;
+            height: 80px;
+            text-align: right;
+            margin: 10px;
+            padding: 0px;
+            outline: none !important;
+            border: none !important;
+            font-size: 30px;
+            font-weight: bold;
+            color: rgb(147, 29, 53);
+        }
+    </style>
 </head>
 
 <body>
     <div class="calculatorBody">
         <table>
             <tr>
-                <td> <input type="text" name="" id="myResult"></td>
+                <td colspan="4"> <input type="text" name="" id="myResult"></td>
             </tr>
             <tr>
                 <td><input type="button" value="C" onclick="DeleteMe('c')"></td>
-                <td><input type="text" value="(" onclick="calculator('(')"></td>
-                <td><input type="text" value=")" onclick="calculator(')')"></td>
+                <td><input type="button" value="(" onclick="calculator('(')"></td>
+                <td><input type="button" value=")" onclick="calculator(')')"></td>
+                <td><input type="button" value="Hi" onclick="calculator('')"></td>
             </tr>
             <tr>
-                <td><input type="text" value="7" onclick="calculator('7')"></td>
-                <td><input type="text" value="8" onclick="calculator('8')"></td>
-                <td><input type="text" value="9" onclick="calculator('9')"></td>
-                <td><input type="text" value="+" onclick="calculator('+')"></td>
+                <td><input type="button" value="7" onclick="calculator('7')"></td>
+                <td><input type="button" value="8" onclick="calculator('8')"></td>
+                <td><input type="button" value="9" onclick="calculator('9')"></td>
+                <td><input type="button" value="+" onclick="calculator('+')"></td>
             </tr>
             <tr>
-                <td><input type="text" value="4" onclick="calculator('4')"></td>
-                <td><input type="text" value="5" onclick="calculator('5')"></td>
-                <td><input type="text" value="6" onclick="calculator('6')"></td>
-                <td><input type="text" value="-" onclick="calculator('-')"></td>
+                <td><input type="button" value="4" onclick="calculator('4')"></td>
+                <td><input type="button" value="5" onclick="calculator('5')"></td>
+                <td><input type="button" value="6" onclick="calculator('6')"></td>
+                <td><input type="button" value="-" onclick="calculator('-')"></td>
             </tr>
             <tr>
-                <td><input type="text" value="1" onclick="calculator('1')"></td>
-                <td><input type="text" value="2" onclick="calculator('2')"></td>
-                <td><input type="text" value="3" onclick="calculator('3')"></td>
-                <td><input type="text" value="*" onclick="calculator('4')"></td>
+                <td><input type="button" value="1" onclick="calculator('1')"></td>
+                <td><input type="button" value="2" onclick="calculator('2')"></td>
+                <td><input type="button" value="3" onclick="calculator('3')"></td>
+                <td><input type="button" value="*" onclick="calculator('4')"></td>
             </tr>
             <tr>
-                <td><input type="text" value="0" onclick="calculator('0')"></td>
-                <td><input type="text" value="." onclick="calculator('.')"></td>
-                <td><input type="text" value="/" onclick="calculator('/')"></td>
-                <td><input type="text" value="=" onclick="answer()"></td>
+                <td><input type="button" value="0" onclick="calculator('0')"></td>
+                <td><input type="button" value="." onclick="calculator('.')"></td>
+                <td><input type="button" value="/" onclick="calculator('/')"></td>
+                <td><input type="button" value="=" onclick="answer()"></td>
             </tr>
         </table>
     </div>
@@ -57,7 +119,7 @@
         function answer() {
             let a = document.getElementById('myResult').value;
             let b = eval(a);
-            document.getElementById('myResult').value = b.toFixed(2);
+            document.getElementById('myResult').value = b;
         }
     </script>
 </body>
